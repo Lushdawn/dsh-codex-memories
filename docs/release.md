@@ -25,17 +25,19 @@ npm view @lushdawn/dsh-codex-memories version    # 应报 404/无输出
 - [x] `npm pack --dry-run` 的文件清单与 `files` 一致，不含 `tests/.test-home`
 - [x] `package.json` 的 `repository` / `homepage` / `bugs` 填真实地址
 - [x] README 里的安装命令与实际包名一致（`dsh plugin --profile web add @lushdawn/dsh-codex-memories`）
-- [ ] `npm publish --access public`（等 2FA 一次性密码）
-- [ ] 在一个独立 profile 上真正装一次并启动，确认插件进入 active 状态
+- [x] `npm publish --access public` 发布 `0.1.0`（2026-10-18）
+- [x] 在独立 `verify` profile 上真实安装：`dsh plugin --profile verify add` 成功，`--dump-config` 中出现该 entry，模块可被 Node 加载且 `name`/`inject`/`apply` 导出形状正确
+- [ ] 发布 `0.1.1`（`author`/`scripts`/`CHANGELOG` 需要进包）
+- [ ] 启动一次真实 Host，确认插件进入 `active` 而非 `failed`
 - [ ] 在真实 DSH 里跑通一次 `/memory status` → `/memory extract` → `/memory consolidate`
 
-最后两项是**目前唯一没有在真实 Host 上验证过的环节**（本会话审批被禁用，`plugin_manager` 不可用，无法安装）。
+安装链路已验证到“配置组合 + 模块加载”，尚未验证“运行时 fiber 状态”与“命令实际执行”——后者需要启动一个 Host。
 
 ## 2.1 Git 推送已配置
 
-GitHub 仓库已建并通过 HTTPS 推送。凭据写入 `~/.git-credentials` 且 `git config --global credential.helper store`，所以以后新项目可直接 `git push`，不需要再次提供 token。
+推送改用 SSH：`~/.ssh/id_ed25519_dsh`（公钥已加入 GitHub），`origin` 为 `git@github.com:Lushdawn/dsh-codex-memories.git`。
 
-安全提醒：该文件是**明文**。token 用完后建议在 GitHub 上撤销并重新签发，或改用 SSH key 后删除该文件。
+`~/.git-credentials` 中的明文 PAT 已删除，`credential.helper` 已还原为默认。GitHub 拒绝没有 `workflow` scope 的 PAT 写入 `.github/workflows/*`，这正是改用 SSH 的原因。
 
 ## 3. 安装验证步骤（凭证到位后第一件事）
 
