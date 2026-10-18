@@ -137,6 +137,10 @@ $DSH_HOME/memories/
 - 自动提取依赖进程存活：会话空闲窗口内进程退出，则这次提取由下次启动的 `backfill` 补齐。
 - 不做语义检索，只有关键词/行级检索（与 Codex 一致）。记忆规模很大时，请靠 `MEMORY.md` 的 `keywords` 路由。
 
+## 参与
+
+欢迎提 issue 和 PR，先看 [CONTRIBUTING.md](CONTRIBUTING.md)。安全问题请按 [SECURITY.md](SECURITY.md) 私下报告，不要开公开 issue。版本变更记录在 [CHANGELOG.md](CHANGELOG.md)。
+
 ## License
 
 MIT

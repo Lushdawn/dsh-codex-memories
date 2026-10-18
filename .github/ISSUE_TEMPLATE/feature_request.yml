@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest a capability or a behaviour change.
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you hitting?
+      description: Describe the situation, not the solution. What does memory get wrong today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+  - type: dropdown
+    id: fidelity
+    attributes:
+      label: Does this preserve fidelity to the Codex memory model?
+      description: |
+        This plugin deliberately mirrors Codex's two-stage memory system. Changes that alter
+        the stage-1/stage-2 contract or the strict artifact schemas need a strong reason.
+      options:
+        - Yes - additive, does not change existing artifacts
+        - Adds a new config option only
+        - Changes an artifact schema (explain why)
+        - Not sure
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered

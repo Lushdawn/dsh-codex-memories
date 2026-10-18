@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/Lushdawn/dsh-codex-memories/security/advisories/new
+    about: Please report security issues privately instead of opening an issue.
+  - name: How the memory system works
+    url: https://github.com/Lushdawn/dsh-codex-memories/blob/main/docs/mechanism.md
+    about: The reverse-engineered mechanism and how this plugin maps onto it.

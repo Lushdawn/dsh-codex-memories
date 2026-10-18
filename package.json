@@ -1,6 +1,6 @@
 {
   "name": "@lushdawn/dsh-codex-memories",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Codex-style file-based long-term memory for DSH: two-stage LLM extraction, consolidated MEMORY.md handbook, prompt-injected memory summary, and search/read/list/note tools.",
   "keywords": [
     "dsh",
@@ -12,6 +12,8 @@
     "agent-memory",
     "codex"
   ],
+  "author": "Lushdawn (https://github.com/Lushdawn)",
+  "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -24,8 +26,14 @@
     "cordis.patch.yml",
     "README.md",
     "README.zh.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
+  "sideEffects": false,
+  "scripts": {
+    "test": "node tests/smoke.mjs",
+    "check": "node --check lib/index.js && node --check lib/llm.js && node --check lib/prompts.js && node --check lib/render.js && node --check lib/store.js && node --check lib/tools.js"
+  },
   "engines": {
     "node": ">=20"
   },
@@ -41,6 +49,5 @@
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
-  },
-  "license": "MIT"
+  }
 }

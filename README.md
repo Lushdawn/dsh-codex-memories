@@ -133,6 +133,12 @@ See [docs/mechanism.md](docs/mechanism.md) for the full mechanism and the eviden
 - Automatic extraction needs the process alive during the idle window; otherwise the next boot's `backfill` catches up.
 - Retrieval is keyword/line based, not semantic — the same tradeoff Codex makes. Route with `keywords` in `MEMORY.md`.
 
+## Contributing
+
+Issues and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). For anything
+security-related, follow [SECURITY.md](SECURITY.md) instead of opening a public issue. Release
+history lives in [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
 MIT

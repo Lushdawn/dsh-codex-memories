@@ -1,0 +1,64 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly.
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not paste transcripts, credentials, or memory file contents that contain
+        secrets. Security issues go to `SECURITY.md`, not here.
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      description: Output of `npm ls @lushdawn/dsh-codex-memories` or the version in your profile.
+      placeholder: 0.1.1
+    validations:
+      required: true
+  - type: input
+    id: dsh-version
+    attributes:
+      label: DSH version
+      description: Output of `dsh --version`.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Extraction (stage 1)
+        - Consolidation (stage 2)
+        - Prompt injection
+        - Tools (memory_search / read / list / note)
+        - /memory command
+        - Install or loading
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened?
+      description: Include the error text. Redact paths and secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. install into a profile
+        2. run /memory status
+        3. ...
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Relevant memory artifacts
+      description: The shape of MEMORY.md / memory_summary.md / index.json (redacted) if relevant.
