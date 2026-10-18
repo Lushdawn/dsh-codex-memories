@@ -1,0 +1,7 @@
+node_modules/
+tests/.test-home/
+*.tgz
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db

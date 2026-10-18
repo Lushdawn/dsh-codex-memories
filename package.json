@@ -1,0 +1,38 @@
+{
+  "name": "@lushdawn/dsh-codex-memories",
+  "version": "0.1.0",
+  "description": "Codex-style file-based long-term memory for DSH: two-stage LLM extraction, consolidated MEMORY.md handbook, prompt-injected memory summary, and search/read/list/note tools.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "memory",
+    "memories",
+    "long-term-memory",
+    "agent-memory",
+    "codex"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "docs/mechanism.md",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}

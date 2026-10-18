@@ -1,0 +1,35 @@
+# ============================================================================
+# dsh-codex-memories — DSH bundle patch
+# ============================================================================
+# Insert this plugin into a DSH profile. The loader passes the entry's `config`
+# block to `apply(ctx, config)`.
+#
+# Install:
+#   dsh plugin --profile web add dsh-codex-memories
+# or from a local checkout:
+#   dsh plugin --profile web add link:<absolute path to this directory>
+#
+# Optional overrides (all fields have safe defaults):
+#
+#   - insert:
+#       - id: dsh-codex-memories
+#         name: '@lushdawn/dsh-codex-memories'
+#         config:
+#           enabled: true
+#           generate: true
+#           use: true
+#           dedicatedTools: true
+#           storageDir: ''
+#           model: ''
+#           extractModel: ''
+#           consolidationModel: ''
+#           idleSeconds: 120
+#           maxSessionsPerRun: 3
+#           maxSessionAgeDays: 30
+#           consolidationThreshold: 2
+#           maxInjectChars: 9000
+# ============================================================================
+
+- insert:
+    - id: dsh-codex-memories
+      name: '@lushdawn/dsh-codex-memories'
