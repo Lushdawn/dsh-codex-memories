@@ -29,6 +29,14 @@
   "engines": {
     "node": ">=20"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lushdawn/dsh-codex-memories.git"
+  },
+  "homepage": "https://github.com/Lushdawn/dsh-codex-memories#readme",
+  "bugs": {
+    "url": "https://github.com/Lushdawn/dsh-codex-memories/issues"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
