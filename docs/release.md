@@ -9,8 +9,8 @@
 | npm 包名 | `@lushdawn/dsh-codex-memories` |
 | 版本 | `0.1.0` |
 | License | MIT |
-| 仓库 | 待定（`package.json` 的 `repository` 字段目前为空，发布前需要填真实 git 地址） |
-| 包内容 | `lib/`、`docs/`、`cordis.patch.yml`、`README.md`、`README.zh.md`、`LICENSE` |
+| 仓库 | https://github.com/Lushdawn/dsh-codex-memories （已建，`main` 分支，public） |
+| 包内容 | `lib/`、`docs/mechanism.md`、`cordis.patch.yml`、`README.md`、`README.zh.md`、`LICENSE` |
 
 **命名冲突记录**：最初的包名 `dsh-memories` 在 npm 上已被占用（0.2.1，作者做的是 "dual-ledger cross-session memory"，即 `MEMORY.md` + `PROGRESS.md`）。本插件是 Codex 记忆系统的结构化复刻（两阶段提取 + 手册合并 + 引用格式 + ad-hoc 写入约束），定位不同，因此改名为 `dsh-codex-memories`。发布前请再确认一次：
 
@@ -20,15 +20,22 @@ npm view @lushdawn/dsh-codex-memories version    # 应报 404/无输出
 
 ## 2. 发布前检查
 
-- [ ] `node --check lib/*.js` 全部通过
-- [ ] `node tests/smoke.mjs` 输出 `PASS smoke`
-- [ ] `npm pack --dry-run` 的文件清单与 `files` 一致，不含 `tests/.test-home`
-- [ ] `package.json` 的 `repository` / `homepage` / `bugs` 填真实地址
-- [ ] README 里的安装命令与实际包名一致（`dsh plugin --profile web add @lushdawn/dsh-codex-memories`）
+- [x] `node --check lib/*.js` 全部通过
+- [x] `node tests/smoke.mjs` 输出 `PASS smoke`
+- [x] `npm pack --dry-run` 的文件清单与 `files` 一致，不含 `tests/.test-home`
+- [x] `package.json` 的 `repository` / `homepage` / `bugs` 填真实地址
+- [x] README 里的安装命令与实际包名一致（`dsh plugin --profile web add @lushdawn/dsh-codex-memories`）
+- [ ] `npm publish --access public`（等 2FA 一次性密码）
 - [ ] 在一个独立 profile 上真正装一次并启动，确认插件进入 active 状态
 - [ ] 在真实 DSH 里跑通一次 `/memory status` → `/memory extract` → `/memory consolidate`
 
 最后两项是**目前唯一没有在真实 Host 上验证过的环节**（本会话审批被禁用，`plugin_manager` 不可用，无法安装）。
+
+## 2.1 Git 推送已配置
+
+GitHub 仓库已建并通过 HTTPS 推送。凭据写入 `~/.git-credentials` 且 `git config --global credential.helper store`，所以以后新项目可直接 `git push`，不需要再次提供 token。
+
+安全提醒：该文件是**明文**。token 用完后建议在 GitHub 上撤销并重新签发，或改用 SSH key 后删除该文件。
 
 ## 3. 安装验证步骤（凭证到位后第一件事）
 
