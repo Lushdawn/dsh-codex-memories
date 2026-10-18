@@ -25,9 +25,8 @@ npm view @lushdawn/dsh-codex-memories version    # 应报 404/无输出
 - [x] `npm pack --dry-run` 的文件清单与 `files` 一致，不含 `tests/.test-home`
 - [x] `package.json` 的 `repository` / `homepage` / `bugs` 填真实地址
 - [x] README 里的安装命令与实际包名一致（`dsh plugin --profile web add @lushdawn/dsh-codex-memories`）
-- [x] `npm publish --access public` 发布 `0.1.0`（2026-10-18）
-- [x] 在独立 `verify` profile 上真实安装：`dsh plugin --profile verify add` 成功，`--dump-config` 中出现该 entry，模块可被 Node 加载且 `name`/`inject`/`apply` 导出形状正确
-- [ ] 发布 `0.1.1`（`author`/`scripts`/`CHANGELOG` 需要进包）
+- [x] `npm publish --access public` 发布 `0.1.0` 与 `0.1.1`（均 2026-10-18；`0.1.1` 补了 `author`/`scripts`/CHANGELOG，`dist-tags.latest = 0.1.1`）
+- [x] 在独立 `verify` profile 上真实安装：`dsh plugin --profile verify add` 成功，`--dump-config` 中出现该 entry，模块可被 Node 加载且 `name`/`inject`/`apply` 导出形状正确（`0.1.0`、`0.1.1` 各验证一次）
 - [ ] 启动一次真实 Host，确认插件进入 `active` 而非 `failed`
 - [ ] 在真实 DSH 里跑通一次 `/memory status` → `/memory extract` → `/memory consolidate`
 
